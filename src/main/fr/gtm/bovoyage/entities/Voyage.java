@@ -70,7 +70,16 @@ public void setVoyageurs(List<Voyageur> voyageurs) {
 	this.voyageurs = voyageurs;
 }
 	
-
+public double getPrixTotalHT() {
+	double prixTotalHT = 0;
+	double prixUnitaire = date.getTarifUnitaireHT();
+	for (Voyageur voyageur : voyageurs) {
+		prixTotalHT = prixTotalHT + prixUnitaire;
+	}
+			
+	return prixTotalHT;
+	
+}
 
 	
 }
