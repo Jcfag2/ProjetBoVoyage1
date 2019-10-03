@@ -8,5 +8,6 @@ public interface VoyageDAO {
 	public void delete(Voyage v);
 	public void update(Voyage v);
 	public Voyage getVoyageById(long id);
+	//
 
 }
