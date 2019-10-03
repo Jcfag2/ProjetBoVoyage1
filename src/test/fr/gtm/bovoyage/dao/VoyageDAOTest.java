@@ -28,7 +28,8 @@ public class VoyageDAOTest {
 	Client c1 = new Client("Charles", 123);
 	
 	private Voyage[] voyages = {
-			new Voyage("Maroc", "Il fait chaud et il y a du sable", 123456789, date1, c1, voyageurs)
+			new Voyage("Maroc", "Il fait chaud et il y a du sable", 123, date1, c1, voyageurs),
+			new Voyage("Islande", "Il fait froid et il y a beaucoup de neige", 456, date1, c1, voyageurs)
 			
 			
 			
@@ -37,7 +38,7 @@ public class VoyageDAOTest {
 
 	@Test
 	public void testCreate() {
-		Voyage voyage = voyage[0];
+		Voyage voyage = voyages[0];
 		dao.create(voyage);
 		int nb = voyages.length;
 		assertEquals(1, nb);
@@ -46,7 +47,7 @@ public class VoyageDAOTest {
 
 	@Test
 	public void testDelete() {
-		Voyage voyage = voyage[0];
+		Voyage voyage = voyages[0];
 		dao.create(voyage);
 		long id = voyage.getId();
 		dao.delete(voyage);
@@ -57,10 +58,10 @@ public class VoyageDAOTest {
 	public void testUpdate() {
 		Voyage voyage = voyages[0];
 		dao.create(voyage);
-		voyage.setNom("voyage");
+		voyage.setRegion("Berck-sur-mer");
 		dao.update(voyage);
 		Voyage voyage1= dao.getVoyageById(voyage.getId());
-		assertEquals("voyage", voyage1.getNom());
+		assertEquals("voyage", voyage1.getRegion());
 	}
 
 	@Test
