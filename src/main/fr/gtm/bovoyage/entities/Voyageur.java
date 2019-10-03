@@ -1,5 +1,7 @@
 package fr.gtm.bovoyage.entities;
 
+import java.util.Date;
+
 public class Voyageur {
 	private String civilite;
 	private String nom;
