@@ -17,10 +17,20 @@ public class DestinationMockDAO implements DestinationDAO {
 
 	@Override
 	public void delete(Destination d) {
+		destinations.remove(d);
+		d.setId(0);
 	}
 
 	@Override
 	public void update(Destination d) {
+		for(Destination destination : destinations) {
+			if(d.getId() == destination.getId()) {
+				destination.setRegion(d.getRegion());
+				destination.setDescriptif(d.getDescriptif());
+				destination.setImage(d.getImage());
+				destination.setDates(d.getDates());
+			}
+		}
 	}
 
 	@Override

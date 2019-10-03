@@ -44,6 +44,14 @@ public void setId(long id) {
 	this.id = id;
 }
 
+public List<DatesVoyage> getDates() {
+	return dates;
+}
+
+public void setDates(List<DatesVoyage> dates) {
+	this.dates = dates;
+}
+
 
 
 
