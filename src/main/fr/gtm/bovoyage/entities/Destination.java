@@ -19,6 +19,10 @@ public Destination(String region, String descriptif) {
 	
 }
 
+public Destination() {
+
+}
+
 public String getRegion() {
 	return region;
 }
