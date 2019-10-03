@@ -12,12 +12,11 @@ List<DatesVoyage> dates;
 
 
 
-public Destination(String region, String descriptif, String image, long id, List<DatesVoyage> dates) {
+public Destination(String region, String descriptif) {
 	this.region = region;
 	this.descriptif = descriptif;
-	this.image = image;
-	this.id = id;
-	this.dates = dates;
+
+	
 }
 
 public String getRegion() {

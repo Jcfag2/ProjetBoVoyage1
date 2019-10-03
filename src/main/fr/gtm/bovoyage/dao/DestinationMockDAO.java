@@ -40,7 +40,7 @@ public class DestinationMockDAO implements DestinationDAO {
 
 	@Override
 	public List<Destination> getAllDestinations() {
-		return null;
+		return destinations;
 	}
 
 }

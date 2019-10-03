@@ -16,6 +16,7 @@ public class DestinationFacade {
 	
 	public void create(Destination d) {
 		dao.create(d);
+		
 	}
 	
 	public List <Destination> getAllDestinations() {
@@ -31,7 +32,7 @@ public class DestinationFacade {
 	}
 	
 	public List <DatesVoyage> getDatesVoyages(long idDestination) {
-		Destination d = new Destination(null, null, null, idDestination, null); 
+		Destination d = new Destination(null, null); 
 		return dao.getDatesVoyages(d);
 	}
 }
