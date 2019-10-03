@@ -32,11 +32,8 @@ public class DestinationFacade {
 	}
 	
 	public List <DatesVoyage> getDatesVoyages(long idDestination) {
-<<<<<<< Upstream, based on origin/zainabbbbb
 		Destination d = new Destination(null, null); 
-=======
-		Destination d = new Destination(null, null, null, idDestination, null); 
->>>>>>> b27fd14 corrections des getter setter
+
 		return dao.getDatesVoyages(d);
 	}
 }

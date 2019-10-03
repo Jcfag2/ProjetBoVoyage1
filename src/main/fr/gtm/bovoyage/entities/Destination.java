@@ -12,11 +12,8 @@ List<DatesVoyage> dates;
 
 
 
-<<<<<<< Upstream, based on origin/zainabbbbb
+
 public Destination(String region, String descriptif) {
-=======
-public Destination(String region, String descriptif, String image, long id, List<DatesVoyage> dates) {
->>>>>>> b27fd14 corrections des getter setter
 	this.region = region;
 	this.descriptif = descriptif;
 
