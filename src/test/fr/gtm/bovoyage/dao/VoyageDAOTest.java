@@ -18,7 +18,7 @@ public class VoyageDAOTest {
 	Date d1 = new Date(2019,05,22);
 	Date d2 = new Date(2019,06,22);
 	Date d3 = new Date(1965,02,14);
-	List<Voyageur> voyageurs = new List<Voyageur>();
+	List<Voyageur> voyageurs;
 	Voyageur v1 = new Voyageur("Mr", "Pignon", "François", d3, 1);
 	Voyageur v2 = new Voyageur("Mr", "Skywalker", "Anakin", d3, 2);
 	
