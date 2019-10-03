@@ -12,7 +12,7 @@ List<DatesVoyage> dates;
 
 
 
-public Destination(String region, String descriptif, String image, long id) {
+public Destination(String region, String descriptif, String image, long id, List<DatesVoyage> dates) {
 	this.region = region;
 	this.descriptif = descriptif;
 	this.image = image;

@@ -31,7 +31,7 @@ public class DestinationFacade {
 	}
 	
 	public List <DatesVoyage> getDatesVoyages(long idDestination) {
-		Destination d = new Destination(null, null, null, idDestination); 
+		Destination d = new Destination(null, null, null, idDestination, null); 
 		return dao.getDatesVoyages(d);
 	}
 }

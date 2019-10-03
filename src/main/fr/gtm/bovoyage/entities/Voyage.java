@@ -11,8 +11,8 @@ public Voyage(String region, String descriptif, long id, DatesVoyage date, Clien
 	this.region = region;
 	this.descriptif = descriptif;
 	this.id = id;
-	this.date = date;
-	this.client = client;
+	this.setDate(date);
+	this.setClient(client);
 }
 
 public String getRegion() {
@@ -37,6 +37,22 @@ public long getId() {
 
 public void setId(long id) {
 	this.id = id;
+}
+
+public DatesVoyage getDate() {
+	return date;
+}
+
+public void setDate(DatesVoyage date) {
+	this.date = date;
+}
+
+public Client getClient() {
+	return client;
+}
+
+public void setClient(Client client) {
+	this.client = client;
 }
 	
 
