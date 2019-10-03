@@ -2,9 +2,10 @@ package fr.gtm.bovoyage.facade;
 
 import java.util.List;
 
+import fr.gtm.bovoyage.dao.DestinationDAO;
 import fr.gtm.bovoyage.entities.DatesVoyage;
 import fr.gtm.bovoyage.entities.Destination;
-
+//
 public class DestinationFacade {
 	
 	private DestinationDAO dao; //lien vers le dao.
@@ -30,6 +31,7 @@ public class DestinationFacade {
 	}
 	
 	public List <DatesVoyage> getDatesVoyages(long idDestination) {
-		return dao.getDatesVoyages(idDestination);
+		Destination d = new Destination(null, null, null, idDestination); 
+		return dao.getDatesVoyages(d);
 	}
 }
