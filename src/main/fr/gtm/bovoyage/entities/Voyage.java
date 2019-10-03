@@ -1,18 +1,25 @@
 package fr.gtm.bovoyage.entities;
 
+import java.util.List;
+
 public class Voyage {
 private String region;
 private String descriptif;
 private long id;
 private DatesVoyage date;
 private Client client;
+private List<Voyageur> voyageurs;
 
-public Voyage(String region, String descriptif, long id, DatesVoyage date, Client client) {
+
+
+public Voyage(String region, String descriptif, long id, DatesVoyage date, Client client, List<Voyageur> voyageurs) {
+	super();
 	this.region = region;
 	this.descriptif = descriptif;
 	this.id = id;
-	this.setDate(date);
-	this.setClient(client);
+	this.date = date;
+	this.client = client;
+	this.setVoyageurs(voyageurs);
 }
 
 public String getRegion() {
@@ -53,6 +60,14 @@ public Client getClient() {
 
 public void setClient(Client client) {
 	this.client = client;
+}
+
+public List<Voyageur> getVoyageurs() {
+	return voyageurs;
+}
+
+public void setVoyageurs(List<Voyageur> voyageurs) {
+	this.voyageurs = voyageurs;
 }
 	
 

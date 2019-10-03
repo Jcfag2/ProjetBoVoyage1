@@ -9,6 +9,7 @@ public class Voyageur {
 	private Date dateNaissance;
 	private long id;
 	
+	
 	public Voyageur(String civilite, String nom, String prenom, Date dateNaissance, long id) {
 		this.civilite = civilite;
 		this.nom = nom;
