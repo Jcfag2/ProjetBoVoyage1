@@ -23,6 +23,10 @@ public Destination(String region, String descriptif, String image, long id, List
 	
 }
 
+public Destination() {
+
+}
+
 public String getRegion() {
 	return region;
 }
@@ -46,6 +50,14 @@ public long getId() {
 }
 public void setId(long id) {
 	this.id = id;
+}
+
+public List<DatesVoyage> getDates() {
+	return dates;
+}
+
+public void setDates(List<DatesVoyage> dates) {
+	this.dates = dates;
 }
 
 

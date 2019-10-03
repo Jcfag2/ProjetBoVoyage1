@@ -12,8 +12,9 @@ public class DestinationFacadeTest {
 	private Destination[] destinations = {
 			new Destination("Maroc", "Il fait beau et chaud, et il y a beaucoup de sable"),
 			new Destination("Islande", "Il fait froid et il y a beaucoup de neige"),
-			new Destination("Le Caire", "Faites attention, c'est un véritable nid d'espion. Au fait, comment est votre blanquette ?")
+			new Destination("Le Caire", "Faites attention, c'est un vï¿½ritable nid d'espion. Au fait, comment est votre blanquette ?")
 	};
+	
 	private DestinationFacade facade = new DestinationFacade(new DestinationMockDAO());
 	
 	@Test
