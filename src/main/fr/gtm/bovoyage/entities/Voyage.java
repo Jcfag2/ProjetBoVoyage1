@@ -1,5 +1,5 @@
 package fr.gtm.bovoyage.entities;
-
+//
 import java.util.List;
 
 public class Voyage {

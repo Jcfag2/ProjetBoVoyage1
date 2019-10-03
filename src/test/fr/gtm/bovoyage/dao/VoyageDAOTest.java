@@ -1,8 +1,6 @@
 package fr.gtm.bovoyage.dao;
 
 import static org.junit.Assert.*;
-import static org.junit.jupiter.api.Assertions.assertEquals;
-import static org.junit.jupiter.api.Assertions.assertNull;
 
 import java.util.Date;
 import java.util.List;
