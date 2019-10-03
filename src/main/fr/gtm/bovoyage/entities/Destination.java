@@ -1,5 +1,6 @@
 package fr.gtm.bovoyage.entities;
 
+import java.util.Date;
 import java.util.List;
 
 public class Destination {
