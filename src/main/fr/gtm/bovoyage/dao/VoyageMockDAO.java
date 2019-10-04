@@ -18,15 +18,13 @@ import fr.gtm.bovoyage.entities.Voyage;
 
 public class VoyageMockDAO implements VoyageDAO {
 
-	/**
-	 * Creation d'une liste de voyages
-	 */
+	
+	// Creation d'une liste de voyages
 	private List<Voyage> voyages = new ArrayList<Voyage>();
 
-	/**
-	 * Simulation du compteur. Modificateur static car s'il existe plusieurs
-	 * VoyageDAO instancies, il leur faudra le meme compteur !!
-	 */
+
+	//Simulation du compteur. Modificateur static car s'il existe plusieurs
+	//VoyageDAO instancies, il leur faudra le meme compteur !!
 	public static long idCpt = 0;
 
 	/**
@@ -40,8 +38,8 @@ public class VoyageMockDAO implements VoyageDAO {
 	 */
 	@Override
 	public void create(Voyage v) {
-		v.setId(++idCpt);
-		voyages.add(v);
+		v.setId(++idCpt); //Attribut d'un numéro id unique puis incrémentation de l'id
+		voyages.add(v); // Ajoute le Voyage v à la liste des voyages. 
 	}
 
 	/**
@@ -54,8 +52,8 @@ public class VoyageMockDAO implements VoyageDAO {
 	 */
 	@Override
 	public void delete(Voyage v) {
-		voyages.remove(v);
-		v.setId(0);
+		voyages.remove(v); //Suppression du Voyage v de la liste des voyages.
+		v.setId(0); // mise à 0 de l'id du voyage v.
 	}
 
 	/**
@@ -68,9 +66,14 @@ public class VoyageMockDAO implements VoyageDAO {
 	 */
 	@Override
 	public void update(Voyage v) {
-		for (Voyage voyage : voyages) {
-			if (voyage.getId() == v.getId())
-				;
+		for (Voyage voyage : voyages) { //boucle for each sur chaque voyage de la liste voyages
+			if (voyage.getId() == v.getId()) //si l'id du voyage dans le MOCK correspond à l'id du voyage que l'on souhaite modifier
+				voyage.setRegion(v.getRegion()); //MàJ de la région
+				voyage.setDescriptif(v.getDescriptif()); //MàJ du descriptif
+				voyage.setDate(v.getDate()); //MàJ de la date
+				voyage.setClient(v.getClient()); //MàJ du client
+				voyage.setVoyageurs(v.getVoyageurs()); //MàJ des voyageurs
+
 			{
 
 			}
@@ -88,9 +91,9 @@ public class VoyageMockDAO implements VoyageDAO {
 
 	@Override
 	public Voyage getVoyageById(long id) {
-		for (Voyage voyage : voyages) {
-			if (voyage.getId() == id)
-				return voyage;
+		for (Voyage voyage : voyages) { //Boucle for each sur chaques voyages
+			if (voyage.getId() == id) //Si l'id du voyage dans le MOCK correspond à l'id du voyage recherché
+				return voyage; //retour du voyage correspond à l'id
 		}
 		return null;
 //
