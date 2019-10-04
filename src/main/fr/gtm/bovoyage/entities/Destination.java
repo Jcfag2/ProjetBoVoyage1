@@ -60,4 +60,9 @@ public class Destination {
 		this.dates = dates;
 	}
 
+	@Override
+	public String toString() {
+		return "[region=" + region + ", descriptif=" + descriptif + "]";
+	}
+
 }

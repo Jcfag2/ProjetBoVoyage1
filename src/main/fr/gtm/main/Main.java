@@ -33,7 +33,8 @@ public class Main {
 
 			Destination d = new Destination(dest, desc);											//Instanciation d'une destination d qui contient la destination et la description entrées par l'utilisateur.
 			facade.create(d);																		//Création de la destination dans le Mock.
-
+			System.out.println("");
+			System.out.println(d + " a été créé");
 			do { 																					//Boucle do...while : On répète cette boucle tant que l'utilisateur n'a pas rentré une autre destination.
 				System.out.println("Voulez vous créer une autre destination ? (O/N)");				//Affichage qui demande à l'utilisateur s'il veut entrer une autre destination.
 				reponse = scanner.nextLine().charAt(0);												//Instanciation de la variable qui va lire le caractère à la position 0, entrée par l'utilisateur.
