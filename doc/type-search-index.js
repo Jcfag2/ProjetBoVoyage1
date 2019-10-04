@@ -1,1 +1,0 @@
-typeSearchIndex = [{"l":"All Classes","url":"allclasses-index.html"},{"p":"fr.gtm.bovoyage.dao","l":"DestinationDAO"},{"p":"fr.gtm.bovoyage.dao","l":"DestinationMockDAO"}]

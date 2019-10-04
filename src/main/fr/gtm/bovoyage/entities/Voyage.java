@@ -50,6 +50,7 @@ public DatesVoyage getDate() {
 	return date;
 }
 
+
 public void setDate(DatesVoyage date) {
 	this.date = date;
 }
@@ -69,7 +70,11 @@ public List<Voyageur> getVoyageurs() {
 public void setVoyageurs(List<Voyageur> voyageurs) {
 	this.voyageurs = voyageurs;
 }
-	
+/**
+ * 	Cette methode permet de calculer le prix total Hors Taxe d'un voyage en fonction du nombre de voyageur.
+ * @return
+ * retourne le prixTotalHT sous forme de double.
+ */
 public double getPrixTotalHT() {
 	double prixTotalHT = 0;
 	double prixUnitaire = date.getTarifUnitaireHT();
