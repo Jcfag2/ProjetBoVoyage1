@@ -76,23 +76,34 @@ public class DestinationFacadeTest {
 	@Test
 	public void testGetDatesVoyagesById() {
 		Destination d = destinations[0];
+		Destination dDeux = destinations[1];
 		facade.create(d);
+		facade.create(dDeux);
 		Date d1 = new Date(2019,5,22);
 		Date d2 = new Date(2019,6,21);
 		Date d3 = new Date(2019,7,1);
 		Date d4 = new Date(2019,8,2);
+		Date d5 = new Date(2020,8,2);
+		Date d6 = new Date(2020,9,4);
 		DatesVoyage dates1 = new DatesVoyage(d1, d2, 0, 0); 
 		DatesVoyage dates2 = new DatesVoyage(d3, d4, 0, 0); 
 		DatesVoyage dates3 = new DatesVoyage(d1, d4, 0, 0); 
+		DatesVoyage dates4 = new DatesVoyage(d2, d3, 0, 0); 
+		DatesVoyage dates5 = new DatesVoyage(d5, d6, 0, 0); 
 		List<DatesVoyage> dates = new ArrayList<DatesVoyage>();
+		List<DatesVoyage> datesDeux = new ArrayList<DatesVoyage>();
 		dates.add(dates1);
 		dates.add(dates2);
 		dates.add(dates3);
+		datesDeux.add(dates4);
+		datesDeux.add(dates5);
 		d.setDates(dates);
+		dDeux.setDates(datesDeux);
 	
 		assertEquals(facade.getDatesVoyages(1), dates);
-		
-		
+		assertEquals(facade.getDatesVoyages(2), datesDeux);
+		assertNotEquals(facade.getDatesVoyages(2), dates);
+		assertNotEquals(facade.getDatesVoyages(1), datesDeux);
 	}
 
 }
