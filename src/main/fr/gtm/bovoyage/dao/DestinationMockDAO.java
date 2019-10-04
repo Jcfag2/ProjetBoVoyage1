@@ -11,8 +11,8 @@ import fr.gtm.bovoyage.entities.Destination;
  * @version 1.0
  */
 public class DestinationMockDAO implements DestinationDAO {
-	private List<Destination> destinations = new ArrayList<Destination>();
-	private static long idCpt = 0;
+	private List<Destination> destinations = new ArrayList<Destination>();	//Création d'une liste de destinations
+	private static long idCpt = 0;		//Simulation du compteur
 
 	/** 
      * Methode permettant de creer une nouvelle destination dans le MOCK.
@@ -22,8 +22,8 @@ public class DestinationMockDAO implements DestinationDAO {
 	@Override
 	public void create(Destination d) {
 
-		d.setId(++idCpt); 
-		destinations.add(d);
+		d.setId(++idCpt); 	//On attribue un id a une destination donnée, puis on incrémente l'id à l'aide du compteur.
+		destinations.add(d);	//On ajoute la destination d recherchée à la liste de destinations.
 
 	}
 	
@@ -34,8 +34,8 @@ public class DestinationMockDAO implements DestinationDAO {
      */
 	@Override
 	public void delete(Destination d) {
-		destinations.remove(d);
-		d.setId(0);
+		destinations.remove(d);	//On supprime la destination d de la liste des destinations.
+		d.setId(0);				//On met à zéro l'id de la destination d.
 	}
 	
 	/** 
@@ -45,12 +45,12 @@ public class DestinationMockDAO implements DestinationDAO {
      */
 	@Override
 	public void update(Destination d) {
-		for (Destination destination : destinations) {
-			if (d.getId() == destination.getId()) {
-				destination.setRegion(d.getRegion());
-				destination.setDescriptif(d.getDescriptif());
-				destination.setImage(d.getImage());
-				destination.setDates(d.getDates());
+		for (Destination destination : destinations) {	//boucle for-each pour chaque destination
+			if (d.getId() == destination.getId()) {		//si l'id de la destination du Mock correspond à l'id que l'on veut modifier,
+				destination.setRegion(d.getRegion());	//MàJ de la région.
+				destination.setDescriptif(d.getDescriptif());   //MàJ du descriptif.
+				destination.setImage(d.getImage());				//MàJ de l'image
+				destination.setDates(d.getDates());				//MàJ de la date.
 			}
 		}
 	}
@@ -63,14 +63,14 @@ public class DestinationMockDAO implements DestinationDAO {
      * Renvoie une liste contenant toutes les Destination ayant pour region le nom de region recherchee.
      */
 	@Override
-	public List<Destination> getDestinationByRegion(String region) {
-		List<Destination> destinationsByRegion = new ArrayList<Destination>();
+	public List<Destination> getDestinationByRegion(String region) {	
+		List<Destination> destinationsByRegion = new ArrayList<Destination>();	//Création de la liste des destinations en fonction de la région choisie.
 
-		for (Destination destination : destinations) {
-			if (destination.getRegion() == region)
-				destinationsByRegion.add(destination);
+		for (Destination destination : destinations) {	//Boucle for-each pour chaque destination
+			if (destination.getRegion() == region)	//Si la région de la destination du Mock correspond à la region de la destination recherchée
+				destinationsByRegion.add(destination);	//On ajoute la destination correspondant à la région recherchée dans la liste des destinationByRegion
 		}
-		return destinationsByRegion;
+		return destinationsByRegion;		//Retour de la destination qui correspond à la région
 
 	}
 
@@ -82,12 +82,12 @@ public class DestinationMockDAO implements DestinationDAO {
      * Renvoie l'objet Destination correspondant a l'id passe en parametre.
      */
 	@Override
-	public Destination destinationById(long id) {
-		for (Destination destination : destinations) {
-			if (destination.getId() == id)
-				return destination;
+	public Destination destinationById(long id) {	
+		for (Destination destination : destinations) {	//Boucle for-each pour chaque destination
+			if (destination.getId() == id)				//Si l'id de la destination du Mock correspond à l'id de la destination recherchée.
+				return destination;						//Retour de la destination qui correspond à l'id.
 		}
-		return null;
+		return null;							//Si l'id ne correspond à aucune destination, alors ne retourne rien.
 	}
 
 	/** 
@@ -98,8 +98,8 @@ public class DestinationMockDAO implements DestinationDAO {
      * Renvoie la liste des dates de voyages associees a la destination d.
      */
 	@Override
-	public List<DatesVoyage> getDatesVoyages(Destination d) {
-		return d.getDates();
+	public List<DatesVoyage> getDatesVoyages(Destination d) {	
+		return d.getDates();										//Retour des dates pour la destination d.
 	}
 
 	/** 
@@ -109,7 +109,7 @@ public class DestinationMockDAO implements DestinationDAO {
      */
 	@Override
 	public List<Destination> getAllDestinations() {
-		return destinations;
+		return destinations;										//Retour de toutes les destinations.
 	}
 
 }
