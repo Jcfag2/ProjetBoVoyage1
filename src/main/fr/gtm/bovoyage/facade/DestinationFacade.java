@@ -34,13 +34,13 @@ public class DestinationFacade {
 
 	public List<DatesVoyage> getDatesVoyages(long idDestination) {
 
-		List<Destination> destinations = dao.getAllDestinations();	
+		List<Destination> destinations = dao.getAllDestinations();	//Creation d'une liste de destinations qui recupere toutes les destinations du MOCK.
 
 		for (Destination destination : destinations) {		//Boucle for-each pour chaque destination
-		if (destination.getId() == idDestination)			//Si l'id de la destination dans le DAO correspond à l'id de la destination dans la liste des destinations.
+		if (destination.getId() == idDestination)			//Si l'id de la destination dans le MOCK correspond à l'id recherché.
 				return dao.getDatesVoyages(destination);	//Retour de la date de la destination.
 
 		}
-		return null;										//Si l'id de la destination dans le DAO ne correspond pas à l'id de la destination dans la liste, ne retourne rien.
+		return null;										//Si l'id recherché n'existe pas dans le MOCK, ne retourne rien.
 	}
 }
