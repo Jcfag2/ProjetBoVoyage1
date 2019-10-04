@@ -34,13 +34,13 @@ public class DestinationFacade {
 
 	public List<DatesVoyage> getDatesVoyages(long idDestination) {
 
-		List<Destination> destinations = dao.getAllDestinations();
+		List<Destination> destinations = dao.getAllDestinations();	
 
-		for (Destination destination : destinations) {
-			if (destination.getId() == idDestination)
-				return dao.getDatesVoyages(destination);
+		for (Destination destination : destinations) {		//Boucle for-each pour chaque destination
+		if (destination.getId() == idDestination)			//Si l'id de la destination dans le DAO correspond à l'id de la destination dans la liste des destinations.
+				return dao.getDatesVoyages(destination);	//Retour de la date de la destination.
 
 		}
-		return null;
+		return null;										//Si l'id de la destination dans le DAO ne correspond pas à l'id de la destination dans la liste, ne retourne rien.
 	}
 }
