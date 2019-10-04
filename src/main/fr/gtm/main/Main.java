@@ -7,9 +7,12 @@ import fr.gtm.bovoyage.entities.Destination;
 import fr.gtm.bovoyage.facade.DestinationFacade;
 
 public class Main {
-
+	/**
+	 * Methode main du programme. Cette methode demande a l'utilisateur par l'intermediaire de la console de definir un nom de destination et une description puis ajoute la destination a la liste de destinations du MOCK.  
+	 * @param args
+	 */
 	public static void main(String[] args) {
-		
+	
 		char reponse;
 		DestinationFacade facade = new DestinationFacade(new DestinationMockDAO());
 
