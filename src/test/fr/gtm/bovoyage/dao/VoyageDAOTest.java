@@ -2,6 +2,7 @@ package fr.gtm.bovoyage.dao;
 
 import static org.junit.Assert.*;
 
+import java.util.ArrayList;
 import java.util.Date;
 import java.util.List;
 
@@ -36,11 +37,26 @@ public class VoyageDAOTest {
 
 	@Test
 	public void testCreate() {
-		Voyage voyage = voyages[0];
-		dao.create(voyage);
-		int nb = voyages.length;
-		assertEquals(1, nb);
-		assertNotEquals(0, voyage.getId());
+		
+		List <Voyage> voyages = new ArrayList <Voyage>();
+		Voyage v = new Voyage("Quebec", "Trop de neige", 789, date1, c1, voyageurs);
+		Voyage vv = new Voyage("Marseille", "Il y a la plage et les montagnes", 159, date1, c1, voyageurs);
+		Voyage vvv = new Voyage("Tatooïne", "I don't like sand, it's coarse and rough an irritating and it gets everywhere.", 357, date1, c1, voyageurs);
+				
+		for (Voyage voyage : voyages) {
+			dao.create(voyage);	
+		
+		//Voyage.setId();
+		voyages.add(v);
+		voyages.add(vv);
+		voyages.add(vvv);
+		
+		
+		int nb = voyages.size();
+		assertEquals(3, nb);
+		assertNotEquals(4, nb);	
+		
+		}
 	}
 
 	@Test
@@ -54,12 +70,17 @@ public class VoyageDAOTest {
 
 	@Test
 	public void testUpdate() {
-		Voyage voyage = voyages[0];
-		dao.create(voyage);
-		voyage.setRegion("Berck-sur-mer");
-		dao.update(voyage);
-		Voyage voyage1= dao.getVoyageById(voyage.getId());
-		assertEquals("voyage", voyage1.getRegion());
+
+		Voyage v = new Voyage("Quebec", "Trop de neige", 789, date1, c1, voyageurs);
+		
+			dao.create(v);	
+			String region = "Poutineland";
+			v.setRegion(region);	
+			dao.update(v);	
+			
+		assertEquals(region, v.getRegion());
+	
+		
 	}
 
 	@Test
