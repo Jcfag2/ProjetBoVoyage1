@@ -75,7 +75,24 @@ public class DestinationFacadeTest {
 
 	@Test
 	public void testGetDatesVoyagesById() {
-		// fail("Not yet implemented");
+		Destination d = destinations[0];
+		facade.create(d);
+		Date d1 = new Date(2019,5,22);
+		Date d2 = new Date(2019,6,21);
+		Date d3 = new Date(2019,7,1);
+		Date d4 = new Date(2019,8,2);
+		DatesVoyage dates1 = new DatesVoyage(d1, d2, 0, 0); 
+		DatesVoyage dates2 = new DatesVoyage(d3, d4, 0, 0); 
+		DatesVoyage dates3 = new DatesVoyage(d1, d4, 0, 0); 
+		List<DatesVoyage> dates = new ArrayList<DatesVoyage>();
+		dates.add(dates1);
+		dates.add(dates2);
+		dates.add(dates3);
+		d.setDates(dates);
+	
+		assertEquals(facade.getDatesVoyages(1), dates);
+		
+		
 	}
 
 }

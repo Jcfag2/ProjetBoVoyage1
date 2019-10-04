@@ -33,8 +33,13 @@ public class DestinationFacade {
 	
 	public List <DatesVoyage> getDatesVoyages(long idDestination) {
 		
-		Destination d = new Destination(null, null); 
-
-		return dao.getDatesVoyages(d);
+		List<Destination> destinations = dao.getAllDestinations();
+		
+		for (Destination destination : destinations) {
+			if (destination.getId() == idDestination)
+				return dao.getDatesVoyages(destination);
+	
+		}
+		return null;
 	}
 }
